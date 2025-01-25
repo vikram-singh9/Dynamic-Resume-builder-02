@@ -3,7 +3,7 @@ const form = document.getElementById('resume-form');
 const resumeDisplay = document.getElementById('resume-display');
 form.addEventListener('submit', function (event) {
     event.preventDefault();
-    // Get form values
+    // Get values of form
     const name = document.getElementById('name').value;
     const email = document.getElementById('email').value;
     const phone = document.getElementById('phone').value;
@@ -12,7 +12,6 @@ form.addEventListener('submit', function (event) {
     const jobTitle = document.getElementById('job-title').value;
     const company = document.getElementById('company').value;
     const skills = document.getElementById('skills').value.split(',');
-    // Create resume HTML dynamically
     const resumeHTML = `
     <h2>Personal Information</h2>
     <p><strong>Name:</strong> ${name}</p>
@@ -32,6 +31,6 @@ form.addEventListener('submit', function (event) {
       ${skills.map(skill => `<li>${skill.trim()}</li>`).join('')}
     </ul>
   `;
-    // Display the resume in the resume container
+    // Display the resume 
     resumeDisplay.innerHTML = resumeHTML;
 });
